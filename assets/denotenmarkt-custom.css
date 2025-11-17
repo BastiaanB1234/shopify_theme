@@ -1,0 +1,252 @@
+/* De Notenmarkt Custom Styling - Matching Vercel Frontend */
+
+/* Color Variables */
+:root {
+  /* Primary Colors - Brown */
+  --color-primary-50: #FFF8DC;
+  --color-primary-100: #F5E6D3;
+  --color-primary-200: #E6D3B7;
+  --color-primary-300: #D2B48C;
+  --color-primary-400: #CD853F;
+  --color-primary-500: #8B4513;
+  --color-primary-600: #7A3E11;
+  --color-primary-700: #6B360F;
+  --color-primary-800: #5C2E0D;
+  --color-primary-900: #4D260B;
+  
+  /* Accent Colors - Gold */
+  --color-accent-50: #FDF6E3;
+  --color-accent-100: #F9E6B3;
+  --color-accent-200: #F4D03F;
+  --color-accent-300: #DAA520;
+  --color-accent-400: #B8860B;
+  --color-accent-500: #9A7209;
+  
+  /* Earth Tones */
+  --color-earth-50: #FAF9F6;
+  --color-earth-100: #F5F3F0;
+  --color-earth-200: #E8E5E0;
+  --color-earth-300: #D4CFC7;
+  --color-earth-400: #B8B0A5;
+  --color-earth-500: #9C9283;
+  --color-earth-600: #807461;
+  --color-earth-700: #64563F;
+  --color-earth-800: #48381D;
+  --color-earth-900: #2C1A00;
+  
+  /* Named Colors */
+  --color-cream: #FAF9F6;
+  --color-linen: #F5F3F0;
+  --color-ink: #2C1A00;
+  --color-muted: #807461;
+  
+  /* Shadows */
+  --shadow-soft: 0 2px 15px -3px rgba(139, 69, 19, 0.08), 0 10px 20px -2px rgba(139, 69, 19, 0.05);
+  --shadow-warm: 0 4px 20px -2px rgba(139, 69, 19, 0.12), 0 2px 8px -2px rgba(139, 69, 19, 0.08);
+  --shadow-lift: 0 8px 32px -4px rgba(139, 69, 19, 0.15), 0 4px 16px -2px rgba(139, 69, 19, 0.1);
+  --shadow-glow: 0 0 20px rgba(218, 165, 32, 0.3);
+}
+
+/* Body Background - Cream with subtle pattern */
+body {
+  background-color: var(--color-cream) !important;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(218, 165, 32, 0.02) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238B4513' fill-opacity='0.01'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm0 0c0 11.046 8.954 20 20 20s20-8.954 20-20-8.954-20-20-20-20 8.954-20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  color: var(--color-ink) !important;
+}
+
+/* Typography */
+body,
+.text-body {
+  font-family: 'Inter', sans-serif !important;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h0, .h1, .h2, .h3, .h4, .h5 {
+  font-family: 'Playfair Display', serif !important;
+  line-height: 1.2;
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+/* Buttons - Rounded full with warm shadows */
+.button,
+.shopify-challenge__button,
+.customer button,
+button.shopify-payment-button__button--unbranded {
+  border-radius: 9999px !important; /* rounded-full */
+  background-color: var(--color-primary-500) !important;
+  color: white !important;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  min-height: 48px;
+  box-shadow: var(--shadow-warm) !important;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.button:hover,
+.shopify-challenge__button:hover,
+.customer button:hover {
+  background-color: var(--color-primary-600) !important;
+  box-shadow: var(--shadow-lift) !important;
+  transform: translateY(-2px);
+}
+
+.button--secondary {
+  background-color: var(--color-linen) !important;
+  color: var(--color-ink) !important;
+  border: 1px solid var(--color-primary-200) !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.button--secondary:hover {
+  background-color: var(--color-primary-100) !important;
+  box-shadow: var(--shadow-warm) !important;
+}
+
+/* Cards - Warm shadows and rounded corners */
+.card,
+.product-card-wrapper .card,
+.collection-card-wrapper .card,
+.article-card-wrapper .card {
+  background-color: white !important;
+  border-radius: 1.5rem !important; /* rounded-2xl */
+  box-shadow: var(--shadow-warm) !important;
+  border: 1px solid var(--color-primary-200) !important;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover,
+.product-card-wrapper .card:hover,
+.collection-card-wrapper .card:hover,
+.article-card-wrapper .card:hover {
+  box-shadow: var(--shadow-lift) !important;
+  transform: translateY(-2px);
+}
+
+/* Header - Backdrop blur and warm colors */
+.header,
+.header-wrapper {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-primary-200) !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+/* Links */
+a {
+  color: var(--color-primary-500);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-primary-600);
+}
+
+/* Product Cards */
+.card__media,
+.product-card__media {
+  border-radius: 1.5rem 1.5rem 0 0 !important;
+  overflow: hidden;
+}
+
+.card__information,
+.product-card__information {
+  padding: 1.5rem;
+}
+
+/* Price */
+.price {
+  color: var(--color-primary-600);
+  font-weight: 600;
+}
+
+.price--on-sale .price-item--regular {
+  color: var(--color-muted);
+}
+
+/* Inputs */
+.field__input,
+.select__select,
+.textarea {
+  border-radius: 9999px !important; /* rounded-full */
+  border: 1px solid var(--color-primary-200) !important;
+  padding: 0.75rem 1.5rem;
+  min-height: 48px;
+  transition: all 0.3s ease;
+}
+
+.field__input:focus,
+.select__select:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-primary-500) !important;
+  box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+}
+
+/* Badges */
+.badge {
+  border-radius: 9999px !important;
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-700);
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+}
+
+/* Sections */
+.section {
+  padding: 4rem 0;
+}
+
+@media screen and (min-width: 750px) {
+  .section {
+    padding: 6rem 0;
+  }
+}
+
+/* Container */
+.page-width {
+  max-width: 1280px;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--color-earth-900) !important;
+  color: var(--color-linen) !important;
+}
+
+.footer a {
+  color: var(--color-linen);
+}
+
+.footer a:hover {
+  color: var(--color-accent-300);
+}
+
+/* Mobile optimizations */
+@media screen and (max-width: 749px) {
+  .button,
+  .shopify-challenge__button,
+  .customer button {
+    min-height: 44px;
+    padding: 0.75rem 1.5rem;
+  }
+  
+  .card {
+    border-radius: 1rem;
+  }
+}
+
+/* Smooth transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
