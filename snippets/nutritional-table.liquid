@@ -1,0 +1,337 @@
+{% comment %}
+  Nutritional Information Table Snippet
+  Displays nutritional information in a modern tabbed interface
+{% endcomment %}
+
+{%- liquid
+  assign product_title = product.title | downcase
+  assign has_cashew = false
+  assign has_amandel = false
+  
+  if product_title contains 'cashew'
+    assign has_cashew = true
+  elsif product_title contains 'amandel' or product_title contains 'almond'
+    assign has_amandel = true
+  endif
+-%}
+
+<div class="nutritional-info" data-nutritional-info>
+  <h3 class="nutritional-info__title">Voedingswaarde per 100 gram</h3>
+  
+  <div class="nutritional-info__tabs">
+    <button 
+      class="nutritional-info__tab active" 
+      data-tab="energie"
+      aria-selected="true"
+      role="tab"
+    >
+      Energie
+    </button>
+    <button 
+      class="nutritional-info__tab" 
+      data-tab="vitamine"
+      aria-selected="false"
+      role="tab"
+    >
+      Vitamine
+    </button>
+    <button 
+      class="nutritional-info__tab" 
+      data-tab="mineralen"
+      aria-selected="false"
+      role="tab"
+    >
+      Mineralen
+    </button>
+  </div>
+
+  <div class="nutritional-info__content">
+    {%- comment -%} Energie Tab {%- endcomment -%}
+    <div class="nutritional-info__panel active" data-panel="energie" role="tabpanel">
+      <div class="nutritional-info__table">
+        {%- if has_cashew -%}
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Energie</span>
+            <span class="nutritional-info__value">553 <span class="nutritional-info__unit">kcal</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Water</span>
+            <span class="nutritional-info__value">0.8 <span class="nutritional-info__unit">g</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Eiwit</span>
+            <span class="nutritional-info__value">18 <span class="nutritional-info__unit">g</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Vet</span>
+            <span class="nutritional-info__value">44 <span class="nutritional-info__unit">g</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Verzadigd</span>
+            <span class="nutritional-info__value">8 <span class="nutritional-info__unit">g</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">E. onverzadigd</span>
+            <span class="nutritional-info__value">24 <span class="nutritional-info__unit">g</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">M. onverzadigd</span>
+            <span class="nutritional-info__value">8 <span class="nutritional-info__unit">g</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Cholesterol</span>
+            <span class="nutritional-info__value">0 <span class="nutritional-info__unit">mg</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Koolhydraten</span>
+            <span class="nutritional-info__value">30 <span class="nutritional-info__unit">g</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Suikers</span>
+            <span class="nutritional-info__value">4.5 <span class="nutritional-info__unit">g</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Vezels</span>
+            <span class="nutritional-info__value">3 <span class="nutritional-info__unit">g</span></span>
+          </div>
+        {%- elsif has_amandel -%}
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Energie</span>
+            <span class="nutritional-info__value">575 <span class="nutritional-info__unit">kcal</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Water</span>
+            <span class="nutritional-info__value">10.7 <span class="nutritional-info__unit">g</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Eiwit</span>
+            <span class="nutritional-info__value">21 <span class="nutritional-info__unit">g</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Vet</span>
+            <span class="nutritional-info__value">49 <span class="nutritional-info__unit">g</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Verzadigd</span>
+            <span class="nutritional-info__value">3.7 <span class="nutritional-info__unit">g</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">E. onverzadigd</span>
+            <span class="nutritional-info__value">31.4 <span class="nutritional-info__unit">g</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">M. onverzadigd</span>
+            <span class="nutritional-info__value">12.2 <span class="nutritional-info__unit">g</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Cholesterol</span>
+            <span class="nutritional-info__value">0 <span class="nutritional-info__unit">mg</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Koolhydraten</span>
+            <span class="nutritional-info__value">20 <span class="nutritional-info__unit">g</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Suikers</span>
+            <span class="nutritional-info__value">4.4 <span class="nutritional-info__unit">g</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Vezels</span>
+            <span class="nutritional-info__value">12 <span class="nutritional-info__unit">g</span></span>
+          </div>
+        {%- else -%}
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Energie</span>
+            <span class="nutritional-info__value">575 <span class="nutritional-info__unit">kcal</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Eiwit</span>
+            <span class="nutritional-info__value">21 <span class="nutritional-info__unit">g</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Vet</span>
+            <span class="nutritional-info__value">49 <span class="nutritional-info__unit">g</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Koolhydraten</span>
+            <span class="nutritional-info__value">20 <span class="nutritional-info__unit">g</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Vezels</span>
+            <span class="nutritional-info__value">12 <span class="nutritional-info__unit">g</span></span>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- comment -%} Vitamine Tab {%- endcomment -%}
+    <div class="nutritional-info__panel" data-panel="vitamine" role="tabpanel">
+      <div class="nutritional-info__table">
+        {%- if has_cashew -%}
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Vitamine B1</span>
+            <span class="nutritional-info__value">0.63 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(57%)</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Vitamine B2</span>
+            <span class="nutritional-info__value">0.26 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(20%)</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Vitamine B6</span>
+            <span class="nutritional-info__value">0.35 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(23%)</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Vitamine B11</span>
+            <span class="nutritional-info__value">50 <span class="nutritional-info__unit">mcg</span> <span class="nutritional-info__adh">(17%)</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Vitamine E</span>
+            <span class="nutritional-info__value">0.9 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(10%)</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Vitamine K</span>
+            <span class="nutritional-info__value">34.1 <span class="nutritional-info__unit">mcg</span> <span class="nutritional-info__adh">(3%)</span></span>
+          </div>
+        {%- elsif has_amandel -%}
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Vitamine E</span>
+            <span class="nutritional-info__value">25.6 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(213%)</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Vitamine B1</span>
+            <span class="nutritional-info__value">0.2 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(18%)</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Vitamine B2</span>
+            <span class="nutritional-info__value">0.8 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(57%)</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Vitamine B6</span>
+            <span class="nutritional-info__value">0.1 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(7%)</span></span>
+          </div>
+        {%- else -%}
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Vitamine E</span>
+            <span class="nutritional-info__value">25.6 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(213%)</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Vitamine B1</span>
+            <span class="nutritional-info__value">0.2 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(18%)</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Vitamine B2</span>
+            <span class="nutritional-info__value">0.8 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(57%)</span></span>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- comment -%} Mineralen Tab {%- endcomment -%}
+    <div class="nutritional-info__panel" data-panel="mineralen" role="tabpanel">
+      <div class="nutritional-info__table">
+        {%- if has_cashew -%}
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Natrium</span>
+            <span class="nutritional-info__value">12 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(2%)</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Kalium</span>
+            <span class="nutritional-info__value">660 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(20%)</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Calcium</span>
+            <span class="nutritional-info__value">37 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(6%)</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Fosfor</span>
+            <span class="nutritional-info__value">593 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(59%)</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">IJzer</span>
+            <span class="nutritional-info__value">6.68 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(51%)</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Magnesium</span>
+            <span class="nutritional-info__value">292 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(97%)</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Koper</span>
+            <span class="nutritional-info__value">1 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(111%)</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Zink</span>
+            <span class="nutritional-info__value">1.2 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(17%)</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Seleen</span>
+            <span class="nutritional-info__value">20 <span class="nutritional-info__unit">mcg</span> <span class="nutritional-info__adh">(36%)</span></span>
+          </div>
+        {%- elsif has_amandel -%}
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Magnesium</span>
+            <span class="nutritional-info__value">270 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(72%)</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Koper</span>
+            <span class="nutritional-info__value">1.0 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(100%)</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Mangaan</span>
+            <span class="nutritional-info__value">2.3 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(115%)</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Fosfor</span>
+            <span class="nutritional-info__value">484 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(69%)</span></span>
+          </div>
+        {%- else -%}
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Magnesium</span>
+            <span class="nutritional-info__value">270 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(72%)</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Koper</span>
+            <span class="nutritional-info__value">1.0 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(100%)</span></span>
+          </div>
+          <div class="nutritional-info__row">
+            <span class="nutritional-info__name">Fosfor</span>
+            <span class="nutritional-info__value">484 <span class="nutritional-info__unit">mg</span> <span class="nutritional-info__adh">(69%)</span></span>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const nutritionalInfo = document.querySelector('[data-nutritional-info]');
+    if (!nutritionalInfo) return;
+
+    const tabs = nutritionalInfo.querySelectorAll('[data-tab]');
+    const panels = nutritionalInfo.querySelectorAll('[data-panel]');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        const targetTab = this.getAttribute('data-tab');
+        
+        // Update tabs
+        tabs.forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        this.classList.add('active');
+        this.setAttribute('aria-selected', 'true');
+        
+        // Update panels
+        panels.forEach(p => {
+          p.classList.remove('active');
+        });
+        const targetPanel = nutritionalInfo.querySelector(`[data-panel="${targetTab}"]`);
+        if (targetPanel) {
+          targetPanel.classList.add('active');
+        }
+      });
+    });
+  })();
+</script>
+
