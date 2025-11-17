@@ -351,6 +351,32 @@ a:hover {
   font-size: 1rem;
 }
 
+/* Nutritional Info Positioning */
+.product__nutritional {
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 990px) {
+  .product__nutritional-mobile {
+    display: block !important;
+    margin-top: 2rem;
+  }
+  
+  .product__info-wrapper .product__nutritional {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .product__nutritional-mobile {
+    display: none !important;
+  }
+  
+  .product__info-wrapper .product__nutritional {
+    display: block;
+  }
+}
+
 /* Mobile optimizations */
 @media screen and (max-width: 749px) {
   .button,
