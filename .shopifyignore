@@ -1,0 +1,11 @@
+# Shopify ignore file
+node_modules/
+.git/
+.github/
+*.md
+!README.md
+.env
+.env.local
+*.log
+.DS_Store
+Thumbs.db

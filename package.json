@@ -1,0 +1,17 @@
+{
+  "name": "denotenmarkt-shopify-theme",
+  "version": "1.0.0",
+  "description": "Shopify theme voor De Notenmarkt",
+  "scripts": {
+    "dev": "shopify theme dev",
+    "push": "shopify theme push --development",
+    "push:live": "shopify theme push --live",
+    "pull": "shopify theme pull",
+    "check": "shopify theme check",
+    "info": "shopify theme info"
+  },
+  "devDependencies": {
+    "@shopify/cli": "^3.0.0",
+    "@shopify/theme": "^3.0.0"
+  }
+}
