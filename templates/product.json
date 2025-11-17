@@ -42,6 +42,9 @@
         "description": {
           "type": "description"
         },
+        "nutritional_info": {
+          "type": "nutritional_info"
+        },
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "settings": {

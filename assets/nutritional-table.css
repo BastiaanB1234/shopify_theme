@@ -1,0 +1,159 @@
+/* Nutritional Information Table - Modern Styling */
+
+.nutritional-info {
+  background-color: var(--color-earth-50);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.nutritional-info__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-bottom: 1.5rem;
+}
+
+.nutritional-info__tabs {
+  display: flex;
+  border-bottom: 2px solid var(--color-primary-200);
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nutritional-info__tab {
+  background: none;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.nutritional-info__tab:hover {
+  color: var(--color-primary-600);
+}
+
+.nutritional-info__tab.active {
+  color: var(--color-primary-600);
+  border-bottom-color: var(--color-primary-500);
+}
+
+.nutritional-info__content {
+  position: relative;
+}
+
+.nutritional-info__panel {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.nutritional-info__panel.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nutritional-info__table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.nutritional-info__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-primary-200);
+  transition: background-color 0.2s ease;
+}
+
+.nutritional-info__row:last-child {
+  border-bottom: none;
+}
+
+.nutritional-info__row:hover {
+  background-color: rgba(139, 69, 19, 0.03);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  border-radius: 0.5rem;
+}
+
+.nutritional-info__name {
+  color: var(--color-ink);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+}
+
+.nutritional-info__value {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  font-size: 0.9375rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.nutritional-info__unit {
+  font-weight: 400;
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
+
+.nutritional-info__adh {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  font-weight: 400;
+}
+
+/* Mobile optimizations */
+@media screen and (max-width: 749px) {
+  .nutritional-info {
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  
+  .nutritional-info__title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .nutritional-info__tab {
+    padding: 0.625rem 1rem;
+    font-size: 0.8125rem;
+  }
+  
+  .nutritional-info__row {
+    padding: 0.625rem 0;
+  }
+  
+  .nutritional-info__name,
+  .nutritional-info__value {
+    font-size: 0.875rem;
+  }
+}
+
